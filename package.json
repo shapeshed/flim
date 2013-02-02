@@ -1,0 +1,47 @@
+{
+  "name": "flim",
+  "author": "George Ornbo <george@shapeshed.com> (http://shapeshed.com)",
+  "version": "0.0.0",
+  "description": "Lightweight, opinionated static site generator", 
+  "keywords": [
+    "static",
+    "blog",
+    "site",
+    "generator"
+  ],
+  "main": "./lib/flim.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shapeshed/flim.git"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "underscore": "latest",
+    "jade": "latest",
+    "marked": "latest",
+    "glob": "3.1.17",
+    "rimraf": "2.1.2"
+  },
+  "bin": "./bin/flim.js",
+  "devDependencies": {
+    "mocha": ">=0.14.1",
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "~0.1.0",
+    "grunt-simple-mocha": "latest",
+    "grunt-contrib-watch": "~0.1.0"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "bugs": {
+    "url": "https://github.com/shapeshed/skeletor/issues"
+  },
+  "licenses": [
+    {
+    "type": "MIT",
+    "url": "https://github.com/shapeshed/flim/raw/master/LICENSE"
+  }
+  ]
+}
