@@ -2,7 +2,7 @@
   "name": "flim",
   "author": "George Ornbo <george@shapeshed.com> (http://shapeshed.com)",
   "version": "0.0.0",
-  "description": "Lightweight, opinionated static site generator", 
+  "description": "Lightweight, opinionated static blog generator", 
   "keywords": [
     "static",
     "blog",
@@ -33,7 +33,7 @@
     "grunt-contrib-watch": "~0.1.0"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "grunt build"
   },
   "bugs": {
     "url": "https://github.com/shapeshed/skeletor/issues"
