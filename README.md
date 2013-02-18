@@ -13,6 +13,7 @@ Flim is an opinionated, lightweight static blog generator. It takes much of its 
 To get started you can clone an example flim site at 
 
     npm install
+    npm install -g grunt-cli
     grunt build
     grunt server
 
