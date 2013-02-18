@@ -64,9 +64,6 @@ Posts are written using vanilla markdown and use JSON for metadata.
     # Praesent urna lectus
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a sapien quam. Vestibulum rutrum mauris sed nisl condimentum sed tempus metus pulvinar. Donec porta suscipit arcu ut hendrerit. Proin lobortis sodales metus, id pretium dui ultrices ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-    ## Cum sociis natoque penatibus
-
-     Praesent urna lectus, fringilla iaculis luctus in, eleifend id sem. In et sem ut purus scelerisque pellentesque. Maecenas euismod mollis massa, et varius nibh vehicula at. Sed lorem ante, pretium in pretium nec, faucibus et purus.
 
 ## Tasks 
 
@@ -94,3 +91,4 @@ Watch `src` files regenerating if there is a change.
 
 [1]: https://github.com/mojombo/jekyll
 [2]: http://gruntjs.com/
+[3]: http://0.0.0.0:3000
