@@ -2,7 +2,7 @@
   "name": "flim",
   "author": "George Ornbo <george@shapeshed.com> (http://shapeshed.com)",
   "version": "0.0.0",
-  "description": "Lightweight, opinionated static blog generator", 
+  "description": "Lightweight, opinionated static blog generator",
   "keywords": [
     "static",
     "blog",
