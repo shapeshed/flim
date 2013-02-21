@@ -60,12 +60,4 @@ describe('Post', function () {
     });
   });
 
-  it('should parse the mtime correctly', function (done) {
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
-      var post = new Post('post.md', stats, data);
-      assert.deepEqual(new Date(post.mtime), new Date("2013-02-05T07:22:27.000Z"));
-      done();
-    });
-  });
-
 });

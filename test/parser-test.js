@@ -1,6 +1,6 @@
 var assert = require("assert"),
   helper = require('./support/test_helper'),
-  Parser = require('../lib/parser');
+  Parser = require('../lib/parsers/parser');
 
 describe('Parser', function () {
 
@@ -163,12 +163,14 @@ describe('Parser', function () {
         {
           title: 'Foo Bar Baz',
           date: new Date("Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)"),
-          tags: [ 'alpha', 'beta', 'gamma' ]
+          tags: [ 'alpha', 'beta', 'gamma' ],
+          slug: 'post'
         },
         {
           title: 'Phasellus id consectetur',
           date: new Date("Fri Jan 25 2013 11:32:12 GMT+0000 (GMT)"),
-          tags: [ 'alpha', 'beta' ]
+          tags: [ 'alpha', 'beta' ],
+          slug: 'post2'
         }
       ]);
       done();
@@ -190,12 +192,14 @@ describe('Parser', function () {
         {
           title: 'Foo Bar Baz',
           date: new Date("Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)"),
-          tags: [ 'alpha', 'beta', 'gamma' ]
+          tags: [ 'alpha', 'beta', 'gamma' ],
+          slug: 'post'
         },
         {
           title: 'Phasellus id consectetur',
           date: new Date("Fri Jan 25 2013 11:32:12 GMT+0000 (GMT)"),
-          tags: [ 'alpha', 'beta' ]
+          tags: [ 'alpha', 'beta' ],
+          slug: 'post2'
         }
       ]);
       done();
@@ -217,7 +221,8 @@ describe('Parser', function () {
         {
           title: 'Foo Bar Baz',
           date: new Date("Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)"),
-          tags: [ 'alpha', 'beta', 'gamma' ]
+          tags: [ 'alpha', 'beta', 'gamma' ],
+          slug: 'post'
         }
       ]);
       done();
