@@ -36,7 +36,7 @@
     "test": "grunt build"
   },
   "bugs": {
-    "url": "https://github.com/shapeshed/skeletor/issues"
+    "url": "https://github.com/shapeshed/flim/issues"
   },
   "licenses": [
     {
