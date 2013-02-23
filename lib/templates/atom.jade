@@ -1,0 +1,17 @@
+doctype xml
+feed(xmlns="http://www.w3.org/2005/Atom")
+  title <![CDATA[fooo]]>
+  link(href="http://shapeshed.com/atom.xml", rel="self")
+  link(href="http://shapeshed.com")
+  updated= new Date().toISOString()
+  id <![CDATA[http://shapeshed.com/]]>
+  author
+    name <![CDATA[George Ornbo]]>
+  generator(uri="https://github.com/shapeshed/flim") Flim
+  for post in posts
+    entry
+      title(type="html") <![CDATA[#{post.title}]]>
+      link(href="http://shapeshed.com/#{post.slug}")
+      updated= post.date.toISOString()
+      id http://shapeshed.com/#{post.slug}
+      content(type="html") <![CDATA[!{post.markup}]]>
