@@ -6,9 +6,9 @@ module.exports = {
       title: "Factory post",
       description: "This is factory post description.",
       tags: ["tag1", "tag2", "tag2"],
-      date: "Thu Feb 14 2013 18:09:07 GMT+0000 (GMT)",
+      date: new Date("Thu Feb 14 2013 18:09:07 GMT+0000 (GMT)"),
       slug: "factory-post",
-      mtime: "Thu Feb 14 2013 18:09:07 GMT+0000 (GMT)"
+      mtime: new Date("Thu Feb 14 2013 18:09:07 GMT+0000 (GMT)")
     },
     {
       markup: "<h1>Some more HTML!</h1>",
@@ -16,9 +16,9 @@ module.exports = {
       title: "Factory post 2",
       description: "This is the second factory post description.",
       tags: ["tag1", "tag3", "tag2"],
-      date: "Thu Feb 14 2013 18:09:07 GMT+0000 (GMT)",
+      date: new Date("Thu Feb 14 2013 18:09:07 GMT+0000 (GMT)"),
       slug: "factory-post2",
-      mtime: "Thu Feb 14 2013 18:09:07 GMT+0000 (GMT)"
+      mtime: new Date("Thu Feb 14 2013 18:09:07 GMT+0000 (GMT)")
     }
   ],
   tags: [
