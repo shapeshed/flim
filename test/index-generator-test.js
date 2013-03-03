@@ -6,18 +6,23 @@ var assert = require("assert"),
 
 describe('IndexGenerator', function () {
 
-  before(function(done) {
+  beforeEach(function(done) {
     fs.mkdir('./tmp', function (err, data) {
       done();
     });
   });
 
+  it('should create an index folder', function (done) {
+    done();
+  });
+
   it('should write an index.html file to the destination', function (done) {
     var options = {
-      template: "./test/fixtures/_layouts/post.jade",
+      template: "./test/fixtures/_layouts/index.jade",
+      buildDir: "./tmp",
       destination: "./tmp/index.html"
     };
-    var index = new IndexGenerator(factories.posts[0], options);
+    var index = new IndexGenerator(factories.posts, options);
     index.init(function (err, data) {
       fs.exists(options.destination, function(exists) {
         assert.deepEqual(exists, true);
@@ -28,14 +33,15 @@ describe('IndexGenerator', function () {
 
   it('should populate the file with the expected contents', function (done) {
     var options = {
-      template: "./test/fixtures/_layouts/post.jade",
+      template: "./test/fixtures/_layouts/index.jade",
+      buildDir: "./tmp",
       destination: "./tmp/index.html"
     };
-    var index = new IndexGenerator(factories.posts[0], options);
+    var index = new IndexGenerator(factories.posts, options);
     index.init(function (err, data) {
       fs.readFile(options.destination, 'utf-8', function(err, data) {
         if(err) { throw err; }
-        assert.deepEqual(data, '<!DOCTYPE html><html><head><title>Factory post</title></head><body><h1>Factory post</h1><h1>Some HTML!</h1></body></html>');
+        assert.deepEqual(data, '<h1>foo</h1>');
         done();
       });
     });
@@ -43,17 +49,18 @@ describe('IndexGenerator', function () {
 
   it('should return true to the callback if successful', function (done) {
     var options = {
-      template: "./test/fixtures/_layouts/post.jade",
+      template: "./test/fixtures/_layouts/index.jade",
+      buildDir: "./tmp",
       destination: "./tmp/index.html"
     };
-    var index = new IndexGenerator(factories.posts[0], options);
+    var index = new IndexGenerator(factories.posts, options);
     index.init(function (err, data) {
       assert.deepEqual(data, true);
+      done();
     });
-    done();
   });
 
-  after(function(done) {
+  afterEach(function(done) {
     rimraf('./tmp', function (err) {
       done();
     });
