@@ -11,7 +11,7 @@ describe('PostsGenerator', function () {
       done();
     });
   });
-  
+
   it('should create a folder for the first post', function (done) {
     var options = {
       template: "./test/fixtures/_layouts/post.jade",

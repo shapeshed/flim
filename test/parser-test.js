@@ -139,7 +139,7 @@ describe('Parser', function () {
       done();
     });
   });
-  
+
   it('should parse the slug of the first tag correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
@@ -147,7 +147,7 @@ describe('Parser', function () {
       done();
     });
   });
-  
+
   it('should parse the numbers of posts for the first tag correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
@@ -155,7 +155,7 @@ describe('Parser', function () {
       done();
     });
   });
-  
+
   it('should parse the posts object for the first tag correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
@@ -184,7 +184,7 @@ describe('Parser', function () {
       done();
     });
   });
-  
+
   it('should parse the posts object for the first second correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
@@ -213,7 +213,7 @@ describe('Parser', function () {
       done();
     });
   });
-  
+
   it('should parse the posts object for the first second correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {

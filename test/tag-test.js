@@ -9,17 +9,17 @@ describe('Tag', function () {
     var tag = new Tag('foo');
     assert.deepEqual(tag.title, 'foo');
   });
-  
+
   it('should parse the slug correctly', function () {
     var tag = new Tag('Alpha Beta');
     assert.deepEqual(tag.slug, 'alpha-beta');
   });
-  
+
   it('should initialise with an empty posts array', function () {
     var tag = new Tag('foo');
     assert.deepEqual(tag.posts, []);
   });
-  
+
   it('should correctly add posts to the posts array', function (done) {
     var tag = new Tag('foo');
     helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
