@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         jshintrc: '.jshintrc'
       }
     },
-    simplemocha: {
+    mochaTest: {
       all: {
         src: 'test/**/*.js'
       }
@@ -28,10 +28,10 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-simple-mocha');
+  grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('build', ['jshint', 'simplemocha']);
+  grunt.registerTask('build', ['jshint', 'mochaTest']);
 
 };

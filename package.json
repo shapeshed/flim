@@ -2,6 +2,7 @@
   "name": "flim",
   "author": "George Ornbo <george@shapeshed.com> (http://shapeshed.com)",
   "version": "0.0.0",
+  "private": true,
   "description": "Lightweight, opinionated static blog generator",
   "keywords": [
     "static",
@@ -19,18 +20,18 @@
     "node": "*"
   },
   "dependencies": {
-    "underscore": "latest",
-    "jade": "latest",
-    "marked": "latest",
+    "underscore": "1.4.4",
+    "jade": "0.28.1",
+    "marked": "0.2.8",
     "glob": "3.1.17",
     "rimraf": "2.1.2"
   },
   "devDependencies": {
-    "mocha": ">=0.14.1",
-    "grunt": "~0.4.0",
-    "grunt-contrib-jshint": "~0.1.0",
-    "grunt-simple-mocha": "latest",
-    "grunt-contrib-watch": "~0.1.0"
+    "mocha": "1.8.1",
+    "grunt": "0.4.0",
+    "grunt-contrib-jshint": "0.2.0",
+    "grunt-mocha-test": "0.2.0",
+    "grunt-contrib-watch": "0.3.1"
   },
   "scripts": {
     "test": "grunt build"
