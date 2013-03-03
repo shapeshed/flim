@@ -1,23 +1,20 @@
 # Flim
 
+## This project is not yet released
+
 [![Build Status](https://secure.travis-ci.org/shapeshed/flim.png)](http://travis-ci.org/shapeshed/flim)
 
-Flim is an opinionated, lightweight static blog generator. It takes much of its inspiration from [Jekyll][1] and favours convention over configuration.
+Flim is a lightweight static blog generator. 
 
 ## Installation
 
     npm install flim
 
-## Getting started
+## Usage
 
-To get started you can clone an example flim site at 
-
-    npm install
-    npm install -g grunt-cli
-    grunt build
-    grunt server
-
-Open a browser at [http://0.0.0.0:3000][3].
+    var flim = require('flim');
+    flim.init('/your/project/path', function(err, data) {
+    }); 
 
 ## Folder Structure
 
@@ -25,7 +22,7 @@ Flim expects sites to have a `src` folder containing `_layouts` and `_posts` fol
 
     src
     ├── _layouts
-    │   ├── archive.jade
+    │   ├── index.jade
     │   ├── layout.jade
     │   ├── post.jade
     │   └── tag.jade
@@ -40,8 +37,6 @@ Flim generates into a `build` folder. Flim is opinionated about the structure of
 
     build
     ├── atom.xml
-    ├── archive
-    │   └── index.html
     ├── index.html
     ├── post-1
     │   └── index.html
@@ -49,10 +44,11 @@ Flim generates into a `build` folder. Flim is opinionated about the structure of
     │   └── index.html
     ├── post-3
         └── index.html
+    ├── sitemap.xml
 
 ## Posts Structure
 
-Posts are written using vanilla markdown and use JSON for metadata.
+Posts are written using vanilla markdown and use JSON for metadata. GitHub markdown is supported.
 
     {
       "layout": "post",
@@ -68,23 +64,7 @@ Posts are written using vanilla markdown and use JSON for metadata.
 
 ## Tasks 
 
-Flim delegates tasks to other tools. Example [Grunt][2] tasks are below although flim is agnostic to this. 
-
-### Site Generation
-
-Generate a site
-
-    var flim = require('flim');
-    flim.init('/your/project/path', function(err, data) {
-    }); 
-    
-### Copying assets
-
-Copy assets from your `src` to `build` folder.
-
-### Watching files
-
-Watch `src` files regenerating if there is a change.
+Flim delegates tasks to other tools since you know best how you want to build your site aside from generating posts. A Makefile or [Grunt][2] are recommended for copying files, minification and deployment. 
 
 [1]: https://github.com/mojombo/jekyll
 [2]: http://gruntjs.com/
