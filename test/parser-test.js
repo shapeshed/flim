@@ -39,7 +39,7 @@ describe('Parser', function () {
   it('should parse the title of the first post correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[0].title, 'Foo Bar Baz');
+      assert.deepEqual(data.posts[0].title, 'Phasellus id consectetur');
       done();
     });
   });
@@ -47,7 +47,7 @@ describe('Parser', function () {
   it('should parse the description of the first post correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[0].description, 'Lorum dorum ipsum');
+      assert.deepEqual(data.posts[0].description, 'Vestibulum nec urna ut quam volutpat vehicula');
       done();
     });
   });
@@ -55,7 +55,7 @@ describe('Parser', function () {
   it('should parse the tags of the first post correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[0].tags, ['alpha', 'beta', 'gamma']);
+      assert.deepEqual(data.posts[0].tags, ['alpha', 'beta']);
       done();
     });
   });
@@ -63,7 +63,7 @@ describe('Parser', function () {
   it('should parse the date of the first post correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[0].date, new Date('Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)'));
+      assert.deepEqual(data.posts[0].date, new Date('Fri Jan 25 2013 11:32:12 GMT+0000 (GMT)'));
       done();
     });
   });
@@ -71,7 +71,7 @@ describe('Parser', function () {
   it('should parse the slug of the first post correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[0].slug, 'post');
+      assert.deepEqual(data.posts[0].slug, 'post2');
       done();
     });
   });
@@ -95,7 +95,7 @@ describe('Parser', function () {
   it('should parse the title of the second post correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[1].title, 'Phasellus id consectetur');
+      assert.deepEqual(data.posts[1].title, 'Foo Bar Baz');
       done();
     });
   });
@@ -103,7 +103,7 @@ describe('Parser', function () {
   it('should parse the description of the second post correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[1].description, 'Vestibulum nec urna ut quam volutpat vehicula');
+      assert.deepEqual(data.posts[1].description, 'Lorum dorum ipsum');
       done();
     });
   });
@@ -111,7 +111,7 @@ describe('Parser', function () {
   it('should parse the tags of the first second correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[1].tags, ['alpha', 'beta']);
+      assert.deepEqual(data.posts[1].tags, ['alpha', 'beta', 'gamma']);
       done();
     });
   });
@@ -119,7 +119,7 @@ describe('Parser', function () {
   it('should parse the date of the first second correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[1].date, new Date('Fri Jan 25 2013 11:32:12 GMT+0000 (GMT)'));
+      assert.deepEqual(data.posts[1].date, new Date('Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)'));
       done();
     });
   });
@@ -127,7 +127,7 @@ describe('Parser', function () {
   it('should parse the slug of the first second correctly', function (done) {
     var parser = new Parser();
     parser.init(__dirname + '/fixtures/', function (err, data) {
-      assert.deepEqual(data.posts[1].slug, 'post2');
+      assert.deepEqual(data.posts[1].slug, 'post');
       done();
     });
   });
@@ -161,16 +161,16 @@ describe('Parser', function () {
     parser.init(__dirname + '/fixtures/', function (err, data) {
       assert.deepEqual(data.tags[0].posts, [
         {
-          title: 'Foo Bar Baz',
-          date: new Date("Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)"),
-          tags: [ 'alpha', 'beta', 'gamma' ],
-          slug: 'post'
-        },
-        {
           title: 'Phasellus id consectetur',
           date: new Date("Fri Jan 25 2013 11:32:12 GMT+0000 (GMT)"),
           tags: [ 'alpha', 'beta' ],
           slug: 'post2'
+        },
+        {
+          title: 'Foo Bar Baz',
+          date: new Date("Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)"),
+          tags: [ 'alpha', 'beta', 'gamma' ],
+          slug: 'post'
         }
       ]);
       done();
@@ -190,16 +190,16 @@ describe('Parser', function () {
     parser.init(__dirname + '/fixtures/', function (err, data) {
       assert.deepEqual(data.tags[1].posts, [
         {
-          title: 'Foo Bar Baz',
-          date: new Date("Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)"),
-          tags: [ 'alpha', 'beta', 'gamma' ],
-          slug: 'post'
-        },
-        {
           title: 'Phasellus id consectetur',
           date: new Date("Fri Jan 25 2013 11:32:12 GMT+0000 (GMT)"),
           tags: [ 'alpha', 'beta' ],
           slug: 'post2'
+        },
+        {
+          title: 'Foo Bar Baz',
+          date: new Date("Thu Jan 24 2013 16:32:12 GMT+0000 (GMT)"),
+          tags: [ 'alpha', 'beta', 'gamma' ],
+          slug: 'post'
         }
       ]);
       done();
