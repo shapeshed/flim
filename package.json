@@ -34,7 +34,7 @@
     "grunt-contrib-watch": "0.3.1"
   },
   "scripts": {
-    "test": "grunt build"
+    "test": "grunt --stack build"
   },
   "bugs": {
     "url": "https://github.com/shapeshed/flim/issues"
