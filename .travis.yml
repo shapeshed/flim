@@ -3,3 +3,9 @@ before_script: npm install -g grunt-cli
 node_js:
   - 0.9
   - 0.8
+notifications:
+  email:
+    recipients:
+      - george@shapeshed.com
+    on_success: always 
+    on_failure: always
