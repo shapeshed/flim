@@ -2,7 +2,6 @@ module.exports = function (grunt) {
   "use strict";
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
     jshint: {
       files: [
         'Gruntfile.js',
@@ -23,14 +22,14 @@ module.exports = function (grunt) {
     watch: {
       gruntfile: {
         files: ['<%= jshint.files %>'],
-        tasks: ['simplemocha:all']
+        tasks: ['build']
       }
     }
   });
 
-  grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-mocha-test');
 
   grunt.registerTask('build', ['jshint', 'mochaTest']);
 
