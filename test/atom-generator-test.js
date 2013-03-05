@@ -2,23 +2,22 @@ var assert = require("assert"),
   factories = require('./support/factories'),
   rimraf = require('rimraf'),
   fs = require('fs'),
+  path = require('path'),
+  config = require(path.resolve(__dirname + '/../lib/templates/flimrc.json')),
   AtomGenerator = require('../lib/generators/atom');
 
 describe('AtomGenerator', function () {
 
   beforeEach(function(done) {
-    fs.mkdir('./tmp', function (err, data) {
+    fs.mkdir('./build', function (err, data) {
       done();
     });
   });
 
   it('should write an atom.xml file to the destination', function (done) {
-    var options = {
-      destination: "./tmp/atom.xml"
-    };
-    var atom = new AtomGenerator(factories.posts, options);
+    var atom = new AtomGenerator(factories, config);
     atom.init(function (err, data) {
-      fs.exists(options.destination, function(exists) {
+      fs.exists(config.build_dir + '/atom.xml', function(exists) {
         assert.deepEqual(exists, true);
         done();
       });
@@ -26,10 +25,7 @@ describe('AtomGenerator', function () {
   });
 
   it('should return true to the callback if successful', function (done) {
-    var options = {
-      destination: "./tmp/atom.xml"
-    };
-    var atom = new AtomGenerator(factories.posts, options);
+    var atom = new AtomGenerator(factories, config);
     atom.init(function (err, data) {
       assert.deepEqual(data, true);
       done();
@@ -37,7 +33,7 @@ describe('AtomGenerator', function () {
   });
 
   afterEach(function(done) {
-    rimraf('./tmp', function (err) {
+    rimraf('./build', function (err) {
       done();
     });
   });
