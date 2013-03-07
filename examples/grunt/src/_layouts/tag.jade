@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= tag.title   
+  ul
+    each post in tag.posts
+      li
+        a(href="/" + post.slug)
+          = post.title

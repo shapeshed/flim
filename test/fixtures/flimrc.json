@@ -1,0 +1,22 @@
+{
+  "site_name": "Some site",
+  "src_dir": "./src",
+  "build_dir": "./build",
+  "tags": {
+    "tags_dir": "tags",
+    "template": "./test/fixtures/_layouts/tag.jade"
+  },
+  "pages": {
+    "index": {
+      "title": "Home",
+      "meta": {
+        "description": "My description",
+        "keywords": "foo, bar, baz"
+      },
+      "template": "./test/fixtures/_layouts/index.jade"
+    },
+    "posts": {
+      "template": "./test/fixtures/_layouts/post.jade"
+    }
+  }
+}

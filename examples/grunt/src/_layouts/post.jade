@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  article
+    p 
+      time(datetime="#{post.date.toISOString()}", data-updated="true")= post.date.toLocaleDateString()
+    h1 #{post.title}
+    p 
+      em= post.description
+    !{post.markup}
+    h2 Tags
+    ul
+      each tag in post.tags
+        li 
+          a(href="/tags/#{tag.replace(/\s+/g, '-').replace(/\.+/g, '-').toLowerCase()}") 
+            =tag
+

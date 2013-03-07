@@ -1,0 +1,16 @@
+{
+  "name": "flim-make-example",
+  "author": "Your name <you@you.com> (http://you.com)",
+  "private": true,
+  "version": "0.0.0",
+  "description": "It is a blog",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "flim": "git://github.com/shapeshed/flim.git",
+    "grunt": "0.4.0",
+    "grunt-contrib-copy": "0.4.0",
+    "grunt-contrib-connect": "0.1.2"
+  }
+}

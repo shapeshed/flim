@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  each post, i in posts
+    li 
+      a(href="/" + post.slug + "/")
+        = post.title
