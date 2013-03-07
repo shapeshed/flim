@@ -1,10 +1,10 @@
 {
-  "site_name": "Some site",
+  "site_name": "A flim site",
   "src_dir": "./src",
   "build_dir": "./build",
   "tags": {
     "tags_dir": "tags",
-    "template": "./test/fixtures/_layouts/tag.jade"
+    "template": "./src/_layouts/tag.jade"
   },
   "pages": {
     "index": {
@@ -13,10 +13,10 @@
         "description": "My description",
         "keywords": "foo, bar, baz"
       },
-      "template": "./test/fixtures/_layouts/index.jade"
+      "template": "./src/_layouts/index.jade"
     },
     "posts": {
-      "template": "./test/fixtures/_layouts/post.jade"
+      "template": "./src/_layouts/post.jade"
     }
   }
 }
