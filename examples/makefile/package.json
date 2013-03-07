@@ -8,7 +8,7 @@
     "node": "*"
   },
   "dependencies": {
-    "flim": "git://github.com/shapeshed/flim.git",
+    "flim": "0.0.1",
     "http-server": "0.5.3"
   }
 }
