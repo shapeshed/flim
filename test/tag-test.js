@@ -22,7 +22,7 @@ describe('Tag', function () {
 
   it('should correctly add posts to the posts array', function (done) {
     var tag = new Tag('foo');
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
+    helper.parsePost(__dirname + '/fixtures/_posts/post.md', function (err, data, stats) {
       var post = new Post('post.md', stats, data);
       tag.addPost(post);
       assert.deepEqual(tag.posts.length, 1);

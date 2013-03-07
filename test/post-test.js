@@ -5,7 +5,7 @@ var assert = require("assert"),
 describe('Post', function () {
 
   it('should parse the markdown correctly', function (done) {
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
+    helper.parsePost(__dirname + '/fixtures/_posts/post.md', function (err, data, stats) {
       var post = new Post('post.md', stats, data);
       assert.deepEqual(post.markup, "<h2>HTML!</h2>\n<p>Paragraph</p>\n");
       done();
@@ -13,7 +13,7 @@ describe('Post', function () {
   });
 
   it('should parse the layout correctly', function (done) {
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
+    helper.parsePost(__dirname + '/fixtures/_posts/post.md', function (err, data, stats) {
       var post = new Post('post.md', stats, data);
       assert.deepEqual(post.layout, "post");
       done();
@@ -21,7 +21,7 @@ describe('Post', function () {
   });
 
   it('should parse the title correctly', function (done) {
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
+    helper.parsePost(__dirname + '/fixtures/_posts/post.md', function (err, data, stats) {
       var post = new Post('post.md', stats, data);
       assert.deepEqual(post.title, "Foo Bar Baz");
       done();
@@ -29,7 +29,7 @@ describe('Post', function () {
   });
 
   it('should parse the description correctly', function (done) {
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
+    helper.parsePost(__dirname + '/fixtures/_posts/post.md', function (err, data, stats) {
       var post = new Post('post.md', stats, data);
       assert.deepEqual(post.description, "Lorum dorum ipsum");
       done();
@@ -37,7 +37,7 @@ describe('Post', function () {
   });
 
   it('should parse the tags correctly', function (done) {
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
+    helper.parsePost(__dirname + '/fixtures/_posts/post.md', function (err, data, stats) {
       var post = new Post('post.md', stats, data);
       assert.deepEqual(post.tags, ["alpha", "beta", "gamma"]);
       done();
@@ -45,7 +45,7 @@ describe('Post', function () {
   });
 
   it('should parse the description correctly', function (done) {
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
+    helper.parsePost(__dirname + '/fixtures/_posts/post.md', function (err, data, stats) {
       var post = new Post('post.md', stats, data);
       assert.deepEqual(new Date(post.date), new Date("2013-01-24T16:32:12.000Z"));
       done();
@@ -53,7 +53,7 @@ describe('Post', function () {
   });
 
   it('should parse the slug correctly', function (done) {
-    helper.parsePost(__dirname + '/fixtures/post.md', function (err, data, stats) {
+    helper.parsePost(__dirname + '/fixtures/_posts/post.md', function (err, data, stats) {
       var post = new Post('post.md', stats, data);
       assert.deepEqual(post.slug, "post");
       done();
