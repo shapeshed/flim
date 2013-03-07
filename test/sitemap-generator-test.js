@@ -3,7 +3,7 @@ var assert = require("assert"),
   rimraf = require('rimraf'),
   fs = require('fs'),
   path = require('path'),
-  config = require(path.resolve(__dirname + '/../lib/templates/flimrc.json')),
+  config = require(path.resolve(__dirname + '/fixtures/flimrc.json')),
   SitemapGenerator = require('../lib/generators/sitemap');
 
 describe('SitemapGenerator', function () {
