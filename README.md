@@ -22,7 +22,7 @@ The examples directory should give you a feel for this.
 
 ## Usage
 
-Programtic use
+Programmatic use
 
     var flim = require('flim');
     flim.init(function(err, data) {
