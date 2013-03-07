@@ -51,7 +51,7 @@ describe('TagsGenerator', function () {
     tags.init(function (err, data) {
       fs.readFile(config.build_dir + '/' + config.tags.tags_dir + '/' + 'tag1/index.html', 'utf-8', function(err, data) {
         if(err) { throw err; }
-        assert.deepEqual(data, '<!DOCTYPE html><html><head><title>tag1 </title></head><body><h1>tag1 </h1><ul><li>Factory post</li><li>Factory post 2</li></ul></body></html>');
+        assert.deepEqual(data, '<!DOCTYPE html><html><head><title>tag1 | Some site </title></head><body><h1>tag1 </h1><ul><li>Factory post</li><li>Factory post 2</li></ul></body></html>');
         done();
       });
     });
@@ -82,7 +82,7 @@ describe('TagsGenerator', function () {
     tags.init(function (err, data) {
       fs.readFile(config.build_dir + '/' + config.tags.tags_dir + '/'+ 'tag2/index.html', 'utf-8', function(err, data) {
         if(err) { throw err; }
-        assert.deepEqual(data, '<!DOCTYPE html><html><head><title>tag2 </title></head><body><h1>tag2 </h1><ul><li>Factory post</li><li>Factory post 2</li></ul></body></html>');
+        assert.deepEqual(data, '<!DOCTYPE html><html><head><title>tag2 | Some site </title></head><body><h1>tag2 </h1><ul><li>Factory post</li><li>Factory post 2</li></ul></body></html>');
         done();
       });
     });
@@ -113,7 +113,7 @@ describe('TagsGenerator', function () {
     tags.init(function (err, data) {
       fs.readFile(config.build_dir + '/' + config.tags.tags_dir + '/' + 'tag3/index.html', 'utf-8', function(err, data) {
         if(err) { throw err; }
-        assert.deepEqual(data, '<!DOCTYPE html><html><head><title>tag3 </title></head><body><h1>tag3 </h1><ul><li>Factory post 2</li></ul></body></html>');
+        assert.deepEqual(data, '<!DOCTYPE html><html><head><title>tag3 | Some site </title></head><body><h1>tag3 </h1><ul><li>Factory post 2</li></ul></body></html>');
         done();
       });
     });
