@@ -18,7 +18,7 @@ Flim is a lightweight static page generator for bloggers.
 * Highlight.js is better than Pygments
 * JSON not YAML
 
-The examples directory should give you a feel for this. 
+The [examples][4] directory should give you a feel for this. 
 
 ## Usage
 
