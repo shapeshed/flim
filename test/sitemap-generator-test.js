@@ -2,23 +2,22 @@ var assert = require("assert"),
   factories = require('./support/factories'),
   rimraf = require('rimraf'),
   fs = require('fs'),
+  path = require('path'),
+  config = require(path.resolve(__dirname + '/../lib/templates/flimrc.json')),
   SitemapGenerator = require('../lib/generators/sitemap');
 
 describe('SitemapGenerator', function () {
 
   beforeEach(function(done) {
-    fs.mkdir('./tmp', function (err, data) {
+    fs.mkdir('./build', function (err, data) {
       done();
     });
   });
 
   it('should write an sitemap.xml file to the destination', function (done) {
-    var options = {
-      destination: "./tmp/sitemap.xml"
-    };
-    var sitemap = new SitemapGenerator(factories.posts, options);
+    var sitemap = new SitemapGenerator(factories, config);
     sitemap.init(function (err, data) {
-      fs.exists(options.destination, function(exists) {
+      fs.exists(config.build_dir + '/sitemap.xml', function(exists) {
         assert.deepEqual(exists, true);
         done();
       });
@@ -26,10 +25,7 @@ describe('SitemapGenerator', function () {
   });
 
   it('should return true to the callback if successful', function (done) {
-    var options = {
-      destination: "./tmp/sitemap.xml"
-    };
-    var sitemap = new SitemapGenerator(factories.posts, options);
+    var sitemap = new SitemapGenerator(factories, config);
     sitemap.init(function (err, data) {
       assert.deepEqual(data, true);
       done();
@@ -37,7 +33,7 @@ describe('SitemapGenerator', function () {
   });
 
   afterEach(function(done) {
-    rimraf('./tmp', function (err) {
+    rimraf('./build', function (err) {
       done();
     });
   });

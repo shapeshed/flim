@@ -2,29 +2,22 @@ var assert = require("assert"),
   factories = require('./support/factories'),
   rimraf = require('rimraf'),
   fs = require('fs'),
+  path = require('path'),
+  config = require(path.resolve(__dirname + '/../lib/templates/flimrc.json')),
   IndexGenerator = require('../lib/generators/index');
 
 describe('IndexGenerator', function () {
 
   beforeEach(function(done) {
-    fs.mkdir('./tmp', function (err, data) {
+    fs.mkdir('./build', function (err, data) {
       done();
     });
   });
 
-  it('should create an index folder', function (done) {
-    done();
-  });
-
   it('should write an index.html file to the destination', function (done) {
-    var options = {
-      template: "./test/fixtures/_layouts/index.jade",
-      buildDir: "./tmp",
-      destination: "./tmp/index.html"
-    };
-    var index = new IndexGenerator(factories.posts, options);
+    var index = new IndexGenerator(factories, config);
     index.init(function (err, data) {
-      fs.exists(options.destination, function(exists) {
+      fs.exists(path.resolve(config.build_dir + '/index.html'), function(exists) {
         assert.deepEqual(exists, true);
         done();
       });
@@ -32,14 +25,9 @@ describe('IndexGenerator', function () {
   });
 
   it('should populate the file with the expected contents', function (done) {
-    var options = {
-      template: "./test/fixtures/_layouts/index.jade",
-      buildDir: "./tmp",
-      destination: "./tmp/index.html"
-    };
-    var index = new IndexGenerator(factories.posts, options);
+    var index = new IndexGenerator(factories, config);
     index.init(function (err, data) {
-      fs.readFile(options.destination, 'utf-8', function(err, data) {
+      fs.readFile(path.resolve(config.build_dir + '/index.html'), 'utf-8', function(err, data) {
         if(err) { throw err; }
         assert.deepEqual(data, '<h1>foo</h1>');
         done();
@@ -48,12 +36,7 @@ describe('IndexGenerator', function () {
   });
 
   it('should return true to the callback if successful', function (done) {
-    var options = {
-      template: "./test/fixtures/_layouts/index.jade",
-      buildDir: "./tmp",
-      destination: "./tmp/index.html"
-    };
-    var index = new IndexGenerator(factories.posts, options);
+    var index = new IndexGenerator(factories, config);
     index.init(function (err, data) {
       assert.deepEqual(data, true);
       done();
@@ -61,7 +44,7 @@ describe('IndexGenerator', function () {
   });
 
   afterEach(function(done) {
-    rimraf('./tmp', function (err) {
+    rimraf('./build', function (err) {
       done();
     });
   });
