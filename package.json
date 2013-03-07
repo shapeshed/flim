@@ -3,7 +3,7 @@
   "author": "George Ornbo <george@shapeshed.com> (http://shapeshed.com)",
   "version": "0.0.0",
   "private": true,
-  "description": "Lightweight, opinionated static blog generator",
+  "description": "Lightweight, static page generator",
   "keywords": [
     "static",
     "blog",
