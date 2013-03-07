@@ -113,10 +113,10 @@ Posts are written using vanilla markdown and use JSON for metadata. GitHub markd
 
 ## Tasks 
 
-Flim delegates build tasks other than generating pages to other tools since you know best how you want to build and dpeloy your site. A Makefile or [Grunt][2] are recommended for copying files, minification and deployment. The [examples][4] folder contains sites with both of these tools. A more complex build process can be seen in the [shapeshed.com][4] repository.
+Flim delegates build tasks other than generating pages to other tools since you know best how you want to build and dpeloy your site. A Makefile or [Grunt][2] are recommended for copying files, minification and deployment. The [examples][4] folder contains sites with both of these tools. A more complex build process can be seen in the [shapeshed.com][5] repository.
 
 [1]: https://github.com/mojombo/jekyll
 [2]: http://gruntjs.com/
 [3]: http://0.0.0.0:3000
 [4]: https://github.com/shapeshed/flim/tree/master/examples
-[4]: https://github.com/shapeshed/shapeshed.com
+[5]: https://github.com/shapeshed/shapeshed.com
