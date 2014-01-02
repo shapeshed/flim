@@ -1,5 +1,7 @@
 {
   "site_name": "A flim site",
+  "description": "A site description",
+  "keywords": "some, keywords",
   "src_dir": "./src",
   "build_dir": "./build",
   "tags": {
